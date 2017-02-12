@@ -6,7 +6,7 @@ This script will check weather vagrant with version >=1.6 is installed or not. I
 
 # Check containers status
 If the vagrant command from setup.sh will complete successfully, one can check the status of nginx and redis container. 
-eg. curl -L http://192.168.100.101:80  should show nginx welcone page. 
+eg. curl -L http://192.168.100.101:80  should show nginx welcome page. 
 
 # Initialize Redis
 below command will help in initializing redis from file data.txt
