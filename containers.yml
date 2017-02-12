@@ -5,3 +5,13 @@
 - name: redis-01
   image: redis
   ports: ['6379:6379']
+  healthcheck:
+    test: "exit 0"
+  readinessProbe:
+    exec:
+      command:
+      - sh
+      - -c
+      - '/opt/redis/redis-cli -h "$REDIS_PORT_6379_TCP_ADDR" -p "$REDIS_PORT_6379_TCP_PORT"'
+    initialDelaySeconds: 15
+    timeoutSeconds: 5

@@ -30,7 +30,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
         # Specify the Docker image to use, pull value from YAML file
         docker.image = container['image']
-
         # Specify port mappings, pull value from YAML file
         docker.ports = container['ports']
 
