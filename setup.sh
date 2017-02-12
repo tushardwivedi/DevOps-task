@@ -17,15 +17,18 @@
 # 
 # set -x	# Uncomment to debug the shell script.
 #
-vagrant_version=`/usr/local/bin/vagrant -v`
-
+vagrant_version=`/usr/local/bin/vagrant -v | cut -d" " -f2`
+req_version=1.6
 exit_code=`echo $?`
+
 
 if [ $exit_code -ne 0 ]
 then
 	echo "Vagrnat is not installed in the machine. Please install from: https://www.vagrantup.com/downloads.html and then re-run the script"
 	exit 1
-else
-	echo "Ohh Yeah"
+elif [ $vagrant_version -gt $req_version ]
+	echo "Seems like suitable version is installed"
 fi
+
+/usr/local/bin/vagrant up
 
